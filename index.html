@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Animation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: white;
+        }
+
+        .container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            height: 100vh;
+        }
+
+        .container > div {
+            position: absolute;
+            width: 30%;
+            height: 11rem;
+            background: linear-gradient(90deg, blue, rgb(19, 22, 23));
+            border-radius: 0px 20px 20px 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .container > div:nth-of-type(2), 
+        .container > div:nth-of-type(4) {
+            border-radius: 15px 0px 0px 20px;
+        }
+
+        .container > div:nth-of-type(1) {
+            top: 0;
+            left: -30%;
+            animation: moveRight 3s infinite alternate;
+        }
+
+        .container > div:nth-of-type(2) {
+            top: 11rem;
+            right: -30%;
+            animation: moveLeft 3s infinite alternate;
+        }
+
+        .container > div:nth-of-type(3) {
+            top: 22rem;
+            left: -30%;
+            animation: moveRight 3s infinite alternate;
+        }
+
+        .container > div:nth-of-type(4) {
+            top: 33rem;
+            right: -30%;
+            animation: moveLeft 3s infinite alternate;
+        }
+
+        @keyframes moveRight {
+            0% {
+                left: -30%;
+            }
+            50% {
+                left: calc(35% - 15%);
+            }
+            100% {
+                left: calc(35% - 15%);
+            }
+        }
+
+        @keyframes moveLeft {
+            0% {
+                right: -30%;
+            }
+            50% {
+                right: calc(35% - 15%);
+            }
+            100% {
+                right: calc(35% - 15%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>Box-1</div>
+        <div>Box-2</div>
+        <div>Box-3</div>
+        <div>Box-4</div>
+    </div>
+</body>
+</html>
